@@ -1,0 +1,259 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  background-color: #ddd;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+nav ul{
+  list-style-type: none;
+}
+
+nav li{
+  display: inline;
+  padding-right: 20px;
+}
+
+nav a{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover{
+  text-decoration: underline;
+}
+
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top: -40px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+.skip:active a{
+  display: inline;
+  top: 0px;
+}
+
+a:focus{
+/*Add the selector and code to put a 2px black border around all elements in focus.*/
+  border: 2px solid #000000;
+}
+
+
+footer{
+  background-color: black;
+  color: white;
+  grid-column: 1 / -1;  /*Can you explain what this does?*/
+  grid-row: 7 / auto;   /*Can you rewrite it?*/
+  padding-top: 30px;
+  text-align: center;
+}
+
+
+.container{
+
+  display:grid;
+  /*Provided*/
+  grid-template-rows: 30px auto auto auto auto auto 100px; 
+  grid-template-columns: 100px 500px 100px;
+  grid-row-gap: 15px;
+  width: 100vw; 
+}
+
+.nav{
+    grid-row: 1 / -1;
+    grid-column: 1 / 4;
+    /*Provided*/
+    background-color: #ddd;
+    padding: 20px 0; 
+    text-align: left; 
+}
+
+header{
+  background-attachment: fixed; /* Parallax effect */
+  background-image: url("/Users/vivianjiang/Documents/MSI/Tutoring/339_HW4/images/header.jpg");      
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+  color: white;
+  height: 400px;                /* Parallax effect */
+
+  grid-column: 1 / -1;
+  grid-row: 2 / span 1;
+}
+
+header p{
+  color: white;
+  font-size: 24px;
+  padding: 0 100px;
+  text-align: center;
+}
+
+.about-image{
+  max-height: 700px;
+  overflow: hidden;
+  grid-column: 1 / 4;
+  grid-row: 3 / span 1;
+}
+
+.about{
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.method-image{
+    max-height: 700px;
+    overflow: hidden;
+    grid-column: 1 / 4;
+    grid-row: 4 / span 1;
+}
+
+.method{
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+}
+
+.clients-image{
+    max-height: 700px;
+    overflow: hidden;
+    grid-column: 1 / 4;
+    grid-row: 5 / span 1;
+}
+
+.clients{
+    grid-column: 2 / span 1;
+    grid-row: 5 / span 1;
+}
+
+.contact-image{
+    max-height: 700px;
+    overflow: hidden;
+    grid-column: 1 / 4;
+    grid-row: 6 / span 1;
+}
+
+.contact{
+   grid-column: 2 / span 1;
+   grid-row: 6 / span 1;
+}
+
+.text-block{
+  margin: auto 0;
+  background-color: rgba(255, 255, 255, .8);
+  border: 10px solid black;
+  padding: 30px;
+}
+
+
+
+@media only screen and (min-width: 800px){
+
+  .container{
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: 70px 400px 400px 400px 400px 400px 100px;
+  }
+
+  .nav{
+    background-color: #ddd;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 35px 0px 35px 0px;
+    grid-column: 1 / -1 ;
+    grid-row: 1 / span 1;
+
+  }
+
+  .about-image{
+     grid-column: 2 / span 2;
+     grid-row: 3 / span 1;
+     max-height: 700px;
+     overflow: hidden;
+    }
+
+  .about{
+    grid-column: 3 / span 2;
+    grid-row: 3 / span 1;
+  }
+
+  .method-image{
+    grid-column: 3 / span 2;
+    grid-row: 4 / span 1;
+    max-height: 700px;
+    overflow: hidden;
+  }
+
+  .method{
+    grid-column: 2 / span 2;
+    grid-row: 4 / span 1;
+  }
+
+  .clients-image{
+    grid-column: 2 / span 2;
+    grid-row: 5 / span 1;
+    max-height: 700px;
+    overflow: hidden;
+
+  }
+
+  .clients{
+    grid-column: 3 / span 2;
+    grid-row: 5 / span 1;
+  }
+
+  .contact-image{
+    grid-column: 3 / span 2;
+    grid-row: 6 / span 1;
+    max-height: 700px;
+    overflow: hidden;
+  }
+
+  .contact{
+    grid-column: 2 / span 2;
+    grid-row: 6 / span 1;
+   }
+
+}  /*End the media query*/
+
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+  .skip a{
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: /* Your code here - set to default setting */;
+    transition: none;
+    z-index: 1;
+  }
+
+  .skip a:focus{
+    display: inline;
+    top:0;
+  }
+}
